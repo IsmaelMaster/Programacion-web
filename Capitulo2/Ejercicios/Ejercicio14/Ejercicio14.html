@@ -14,8 +14,126 @@
     <body>
         <!-- Este es el texto de la página -->
         <h1>
-            Proximamente
+            Retroalimentacion sobre su visita al campus.
         </h1>
+
+        <p>
+            Llene este formulario para ayudarnos a mejorar nuestro sitio web. 
+            Sus comentarios son muy importantes para nosotros.
+        </p>
+
+        <!-- Esta etiqueta empieza el formulario, indica el 
+        método de enviar la informacion y la ubicacion de la 
+        secuencia de comandos de procesamiento del formulario. -->
+        <form method = "post" action = "https://www.deitel.com">
+            <!-- Las entradas ocultas contienen informacion
+            no visible que tambien se enviara-->
+            <input type = "hidden" name = "destinatario" value = "https://www.deitel.com">
+            <input type = "hidden" name = "asunto" value = "Formulario de retroalimentacion">
+            <input type = "hidden" name = "redirigir" value = "Ejemplo1.html">
+
+            <!-- <input type = "text"> Insertar un campo de texto -->
+             <p>
+                <label>
+                    Nombre:
+                    <input name = "nombre" type = "text" size = "25">
+                </label>
+             </p>
+
+             <!-- <input type = "password" inserta un cuadro de texto 
+             que aparece enmarcado con caracteres de asterisco -->
+             <p>
+                <label>
+                    Direccion de correo electronico:
+                    <input name = "email" type = "password" size = "25">
+                </label>
+             </p>
+
+             <p>
+                <strong>
+                    Cosas que le gustaron del campus
+                </strong> <br>
+
+                <label>
+                    <input name = "cosasgustaron" type = "checkbox" value = "Diseño">
+                    Campus
+                </label>
+
+                <label>
+                    <input name = "cosasgustaron" type = "checkbox" value = "Diseño">
+                    Estudiantes
+                </label>
+
+                <label>
+                    <input name = "cosasgustaron" type = "checkbox" value = "Diseño">
+                    Ubicacion
+                </label>
+
+                <label>
+                    <input name = "cosasgustaron" type = "checkbox" value = "Diseño">
+                    Ambiente
+                </label>
+
+                <label>
+                    <input name = "cosasgustaron" type = "checkbox" value = "Diseño">
+                    Dormitorios
+                </label>
+
+                <label>
+                    <input name = "cosasgustaron" type = "checkbox" value = "Diseño">
+                    Deportes
+                </label>
+             </p>
+
+             <!-- <input type = "radio"> Crea un boton de opcion. 
+             La diferencia entre botones de opciones y casillas de 
+             verificacion es que solo puedes seleccionarse un boton de 
+             opciones en un grupo. -->
+
+             <p>
+                <strong>
+                    Como supieron sobre la universidad
+                </strong> <br>
+
+                <label>
+                    <input name = "comositio" type = "radio" value = "Motor de busqueda">
+                    Amigos
+                </label>
+
+                <label>
+                    <input name = "comositio" type = "radio" value = "Motor de busqueda">
+                    Television
+                </label>
+
+                <label>
+                    <input name = "comositio" type = "radio" value = "Motor de busqueda">
+                    Internet
+                </label>
+
+                <label>
+                    <input name = "comositio" type = "radio" value = "Motor de busqueda">
+                    Otro
+                </label>  
+             </p>
+
+             <!-- <textarea> Crea un cuadro de texto multilinea -->
+             <p>
+                <label>
+                    Comentarios: <br>
+                    <textarea name = "comentarios" rows = "4" cols = "36">
+                        Escriba aqui los comentarios. 
+                    </textarea>
+                </label>
+             </p>
+
+             <p>
+                <!-- Los tipos de entrada "submit" y "reset" insertan 
+                botones para enviar y borrar el contenido del 
+                formulario, respectivamente -->
+                <input type = "submit" value = "Enviar">
+                <input type = "reset" value = "Borrar">
+             </p>
+        </form>
         
         <a href= "/Capitulo2/Ejercicios/Ejercicios.html">
             <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
