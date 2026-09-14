@@ -11,65 +11,106 @@
 
     <body>
         <!-- Este es el texto de la página -->
-        <header>
-            <h1>
-                Ejercicio
-            </h1>
-        </header>
+        <h1>
+            Ejercicio
+        </h1>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href = "# formulario">
-                        Formulario
-                    </a>
-                </li>
+        <ul>
+        <!-- Crear una lista desordenada de hipervinculos -->
+            <li>
+                <a>
+                    El tipo input 
+                    <strong>
+                        color
+                    </strong>
+                    permite al usuario introducir un color.
+                </a>
+            </li>
 
-                <li>
-                    <a href = "# figuras">
-                        Figuras
-                    </a>
-                </li>
-            </ul>
-        </nav>
+            <li>
+                <a>
+                    La mayoria de los navegadores despliegan el tipo input color como un campo de texto en donde el usuario puede introducir un codigo hexadecimal.
+                </a>
+            </li>
+            
+            <li>
+                <a>
+                    En el futuro, cuando el usuario haga clic sobre un tipo input 
+                    <strong>
+                        color
+                    </strong>
+                    , es probable que los navegadores muestren un cuadro de dialogo en donde el usuario podra elegir un color.
+                </a>
+            </li>
+            
+            <li>
+                <a>
+                    El atributo
+                    <strong>
+                        autofocus
+                    </strong>
+                    , que puede usarse solo en un elemento input de un formulario, coloca el cursor en el campo de texto despues de que se carga el navehador y despliega la pagina.
+                    No necesitamos incluir el elememento autofocus en nuestros formularios.
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    Los nuevos tipos input de 
+                    <strong>
+                        HTML5
+                    </strong>
+                    tienen validacion automatica del lado del cliente, con lo cual se eleimina la necesidad del agregar codigo de JavaScript para validar la entrada del usuario y reducir la cantidad de datos incompletos que se envian.
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    Cuando un usuario introduce datos en un formulario y luego lo envia, el navegador verifica de inmediato si los datos son correctos.
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    Si desea anular la validacion, puede agregar el atributo 
+                    <strong>
+                        formnovalidate
+                    </strong>
+                    al tipo input 
+                    <strong>
+                        submit
+                    </strong>
+                    .
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    Mediante el uso de JavaScript es posible personalizar el proceso de validacion.
+                </a>
+            </li>
+        </ul>
+
         
-        <section id = "formulario">
-            <h3>
-                Formulario de ejemplo
-            </h3>
+        <h3>
+            Figuras de la seccion
+        </h3>
 
-            <form method = "post" action = "http://www.deitel.com">
-                <p>
-                    <label>
-                        Color:
-                        <input type = "color" autofocus />
-                            (Codigo hexadecimal como #ADD8E6)
-                    </label>
-                </p>
-            </form>
-        </section>
+        <figure>
+            <img src = "/Imagenes/escandalosos.png" alt = "Escandalosos">
+        </figure>
 
-        <section id = "figuras">
-            <h3>
-                Figuras de la seccion
-            </h3>
+        <figure>
+            <img src = "/Imagenes/gravity falls.jpg" alt = "Gravity falls">
+        </figure>
 
-            <figure>
-                <img src = "/Imagenes/escandalosos.png" alt = "Escandalosos">
-            </figure>
+        <figure>
+            <img src = "/Imagenes/mario.jpg" alt = "Mario Bros">
+        </figure>
 
-            <figure>
-                <img src = "/Imagenes/gravity falls.jpg" alt = "Gravity falls">
-            </figure>
-
-            <figure>
-                <img src = "/Imagenes/mario.jpg" alt = "Mario Bros">
-            </figure>
-
-            <figure>
-                <img src = "/Imagenes/toad.jpg" alt = "Toad">
-            </figure>
-        </section>
+        <figure>
+            <img src = "/Imagenes/toad.jpg" alt = "Toad">
+        </figure>
 
         <a href= "/Capitulo3/Ejercicios/Ejercicios.html">
             <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
