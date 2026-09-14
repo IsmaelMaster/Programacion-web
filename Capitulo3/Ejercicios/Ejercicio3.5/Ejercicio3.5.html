@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 3
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicio
+        </h1>
+
+        <p>
+            3.5 Escriba un elemento (o elementos) de HTML5 para realizar cada una de las siguientes tareas.
+            <ol>
+                <li>
+                    Se pidio a los estudiantes que clafificaran los alimentos en la cafeteria, en una escala del 1 al 10. Use un elemento meter con texto a su izquierda y a su derecha para indicar que la calificacion promedio fue 7 de 10.
+                    <p>
+                        Calificacion promedio:
+                        <meter min = "1" max = "10" value = "7">
+                            7 de 10
+                        </meter>
+                        7 de 10
+                    </p>
+                </li>
+
+                <li>
+                    Cree un elemento details que muestre el texto "
+                    <strong>
+                        Resultados de la encuesta
+                    </strong>
+                    " en el elemento summary para la parte (a). Cuando el usuario haga clic en la flecha enseguida del texto de summary, debera aparecer un parrafo que aplique sobre la encuesta.
+                    <details>
+                        <summary>
+                            Resultado de la encuesta
+                        </summary>
+                        <p>
+                            Se pidio a los estudiantes que clafificaran los alimentos en la cafeteria, en una escala del 1 al 10. Use un elemento meter con texto a su izquierda y a su derecha para indicar que la calificacion promedio fue 7 de 10.
+                            El resultado promedio fue 7.
+                        </p>
+                    </details>
+                </li>
+
+                <li>
+                    Cree un elemento input text para el primer nombre. El elemento debera recibir el enfoque de manera automatica al momento de desplegar el formulario en un navegador.
+                    <input type = "text" name = "nombre" id = "nombre" autofocus>
+                </li>
+                
+                <li>
+                    Modifique la parte (c) de modo que se elimine el elemento label y use texto en un elemento placeholder en el elemento input.
+                    <input type = "text" name = "nombre" id = "nombre" placeholder = "Primer nombre" autofocus>
+                </li>
+                
+                <li>
+                    Use un elemento datalist para proveer una lista autocomplete para cinco estados.
+                    <input list = "estados" name = "estado" id = "estado">
+                    <datalist id = "estados">
+                        <option value = "Aguascalientes">
+                        <option value = "Baja California">
+                        <option value = "Chiapas">
+                        <option value = "Jalisco">
+                        <option value = "Yucatan">
+                    </datalist>
+                </li>
+                
+                <li>
+                    Cree un elemento input range que permita al usuario seleccionar un numero del 1 al 100.
+                    <input type = "range" name = "numero" id = "numero" min = "1" max = "100">
+                </li>
+                
+                <li>
+                    Especifique que no debe permitirse el atributo autocomplete en un formulario. Muestre solo la etiqueta de apertura del formulario.
+                    <form action = "#" method = "post" autocomplete = "off">
+                </li>
+                
+                <li>
+                    Use un elemento mark para resaltar el segundo enunciado del siguiente parrafo: <
+                    <strong>
+                        p
+                    </strong>
+                    > Se pide a los estudiantes que calificaran los alimentos en la cafeteria, en la escala del 1 al 10. El resultado promedio fue 7. <
+                    <strong>
+                        /p
+                    </strong>
+                    >
+                    <p>
+                        Se pide a los estudiantes que calificaran los alimentos en la cafeteria.
+                        <mark>
+                            En una escala del 1 al 10. El resultado promedio fue 7.
+                        </mark>
+                    </p>
+                </li>
+            </ol>
+        </p>
+        
+        <a href= "/Capitulo3/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

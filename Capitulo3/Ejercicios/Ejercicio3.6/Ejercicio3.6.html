@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 4
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicio
+        </h1>
+
+        <h1>
+            Registro de usuarios
+        </h1>
+
+        <form action = "#" method = "post">
+            <p>
+                <label>
+                    Primer Nombre:
+                    <input name = "nombre" type = "text" size = "25" maxlength = "30">
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    Apellido::
+                    <input name = "apellido" type = "text" size = "25" maxlength = "30">
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    Correo electronico:
+                    <input name = "email" type = "text" size = "25" maxlength = "30">
+                </label>
+            </p>
+
+            <details>
+                <summary>
+                    Pregunta opcional: ¿En que año de la universidad te encuentras?
+                </summary>
+
+                <p>
+                    <label for = "año">
+                        Año universitario:
+                    </label>
+                    <select id = "año" name = "año">
+                        <option value = "">
+                            Seleccionar opcion
+                        </option>
+
+                        <option value = "primer">
+                            Primer año
+                        </option>
+
+                        <option value = "segundo">
+                            Segundo año
+                        </option>
+
+                        <option value = "tercero">
+                            Tercer año
+                        </option>
+
+                        <option value = "cuarto">
+                            Cuarto año
+                        </option>
+
+                        <option value = "quinto">
+                            Quinto año o mas
+                        </option>
+                    </select>
+                </p>
+            </details>
+            <p>
+                <input type = "submit" value = "Enviar">
+                <input type = "reset" value = "Borrar">
+            </p>
+        </form>
+        
+        <a href= "/Capitulo3/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>
