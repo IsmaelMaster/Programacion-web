@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<!-- Fig. 4.9: posicionamiento.html -->
+<!-- Posicionamiento absoluto de los elementos. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Posicionamiento absoluto
+        </title>
+
+        <style type = "text/css">
+            .imagen_fondo   {position: absolute; top: 0px; left: 0px; z-index: 1;}
+            .imagen_primerplano {position: absolute; top: 25px; left: 100px; z-index: 2;}
+            .texto  {position: absolute; top: 25px; left: 100px; z-index: 3; font-size: 20pt; font-family: tahoma, geneva, sans-serif;}
+        </style>
+    </head>
+
+    <body>
+        <p>
+            <img src = "/Imagenes/mancha.jpg" class = "imagen_fondo" alt = "Primera imagen posicionada" />
+        </p>
+
+        <p>
+            <img src = "/Imagenes/iconcirculo.png" class = "imagen_primerplano" alt = "Segunda imagen posicionada" />
+        </p>
+
+        <p class = "texto">
+            Texto posicionado
+        </p>
+        
+        <a href= "/Capitulo4/Ejemplos/Ejemplos.html" style = "position: absolute; top: 500px; left: 20px; z-index: 10;">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>
