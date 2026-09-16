@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!-- Fig. 4.15: flotante.html -->
+<!-- Elementos flotantes. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Texto que fluye alrededor de elementos flotantes
+        </title>
+
+        <style type = "text/css">
+            header  {background-color: skyblue; text-align: center; font-family: arial, helvetica, sans-serif; padding: .2em;}
+            p   {text-align: justify; font-family: verdana, geneva, sans-serif; margin: .5em;}
+            h1  {margin-top: 0px;}
+            .flotante   {background-color: lightgrey; font-size: 1.5em; font-family: arial, helvetica, sans-serif; padding: .2em; margin-left: .5em; margin-bottom: .5em; float: right; text-align: right; width: 50%;}
+            section {border: 1px solid skyblue;}
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <img src = "/Imagenes/deitel.jpg" alt = "Deitel"/>
+        </header>
+
+        <section>
+            <h1 class = "flotante">
+                Capacitacion corporativa y creacion de contenido
+            </h1>
+
+            <p>
+                Deitel & Asociates, Inc. Es una empresa reconocida a nivel mundial, dedicada al entrenamiento corporativo y la creacion de contenido.
+                Se especializa en lenguajes de programacion, tecnologia de Internet / Web, desarrollo de aplicaciones para iPhone y Android, y educacion sobre tecnologia de objetos.
+                La empresa ofrece cursos sobre Java, C++, C#, Visual Basic, C, Programacion en Internet y web, Tecnologia de objetos y desarrollo de aplicaciones para iPhone y Android.
+            </p>
+        </section>
+
+        <section>
+            <h1 class = "flotante">
+                Libros y videos sobre programacion
+            </h1>
+
+            <p>
+                A lo largo de su sociedad editorial con Pearson, Deitel & Associates, Inc.
+                Publica libros de texto de vanguardia sobre programacion, libros profesionales y cursos de video LiveLessons en DVD y basados en Web.
+            </p>
+        </section>
+
+        <a href= "/Capitulo4/Ejemplos/Ejemplos.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>
