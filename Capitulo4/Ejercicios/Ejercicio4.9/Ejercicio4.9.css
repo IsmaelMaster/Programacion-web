@@ -1,0 +1,25 @@
+
+.boton-navegacion   {
+    display: inline-block; 
+    border: 2px solid brown; 
+    background-color: blueviolet;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.boton-navegacion a {
+    color: white;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+}
+
+.boton-navegacion:hover {
+    background-color: cadetblue;
+    border-color: black;
+}
+
+.boton-navegacion:hover a   {
+    color: yellow;
+}

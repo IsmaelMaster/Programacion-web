@@ -1,0 +1,7 @@
+
+.imagen    {
+    background-image: url('/Imagenes/deitel.jpg');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-attachment: fixed;
+}
