@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.14: fusionarimagenes.html -->
+<!-- Fusionar una imagen en otra mediante CSS3. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Fusionar imagenes
+        </title>
+
+        <style type = "text/css">
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #portada    {
+                position: relative;
+                margin: 0 auto;
+                width: 300px;
+                height: 400px;
+            }
+            #portada img    {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                -webkit-transition: opacity 4s ease-in-out;
+                transition: opacity 4s ease-in-out;
+            }
+            #portada img.top:hover  {
+                opacity: 0;
+            }
+            .regreso    {
+                display: inline-block;
+                margin: 20px;
+                position: relative;
+                z-index: 10;
+            }
+            .regreso img    {
+                display: block;
+                width: 90px;
+                height: 120px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "portada">
+            <img class = "bottom" src = "/Imagenes/libro c++.jpg" alt = "Portada de C++">
+            <img class = "top" src = "/Imagenes/libro java.jpg" alt = "Portada de Java">
+        </div>
+
+        <a class = "regreso" href= "/Capitulo5/Ejemplos/Ejemplos.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso" >
+        </a>
+    </body>
+</html>

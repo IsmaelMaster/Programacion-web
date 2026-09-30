@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.17: multicolumnas.html -->
+<!-- Texto multicolumna en CSS3. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Modelo de diseño de caja flexible
+        </title>
+
+        <style type = "text/css">
+            p   {
+                margin: 0.9em 0em;
+            }
+            .multicolumna   {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                -o-column-count: 3;
+                column-count: 3;
+                -webkit-column-gap: 30px;
+                -moz-column-gap: 30px;
+                -o-column-gap: 30px;
+                column-gap: 30px;
+                -webkit-column-rule: 1px outset black;
+                -moz-column-rule: 1px outset black;
+                -o-column-rule: 1px outset black;
+                column-rule: 1px outset black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                Computadoras, hardware y software
+            </h1>
+        </header>
+
+        <div class = "multicolumna">
+            <p>
+                Una computadora es un dispositivo que puede realizar calculos y tomar
+                decisiones logicas con mucha mas rapidez que los humanos.
+                Muchas de las computadoras personales de la actualidad pueden realizar miles
+                de millones de calculos en un segundo; mas de lo que un humano puede realizar
+                durante toda su vida. Las supercomputadoras ya se encuentran realizando miles 
+                de billones (trillones) de instrucciones por segundo. Para poner
+                esto en perspectiva, una computadora de un trillon de instrucciones por segundo
+                puede realizar en un segundo mas de 100,000 calculos para cada persona en el planeta.
+                Y estos "limites superiores" aumentan con rapidez.
+            </p>
+
+            <p>
+                Las computadoras procesan datos bajo el control de conjuntos de
+                instrucciones llamadas programas de computadora. Estos programas guian
+                a la computadora por conjuntos ordenados de acciones especificadas por
+                personas llamadas programadores de computadora. Los programas que se ejecutan en una
+                computadora se conocen como software. En este libro usted aprendera sobre la 
+                metodologia de programacion clave de la actualidad que mejora la productividad
+                del programador, con lo cual se reducen los costos de desarrollo de software
+                programacion orientada a objetos.
+            </p>
+
+            <p>
+                Una computadora consiste de diversos dispositivos conocidos como hardware
+                (por ejemplo: el teclado, pantalla, raton, disco duro, memoria, DVD
+                y unidades de procesamiento). Los costos de las computadoras disminuyen en forma
+                gramatica, debido a los rapidos desarrollos en las tecnologias de 
+                hardware y software. Las computadoras que podrian haber llenado salones
+                extensos y costar millones de dolares hace unas decadas ahora se 
+                inscriben en chips de silicio mas chicos que una unidad que cuestan
+                tal vez unos cuantos dolares. Por ironia el silicio es uno de los
+                materiales mas abundantes un ingrediente en la arena ordinaria.
+                La tecnologia de chips de silicio ha hecho la computacion tan economica
+                que hay mas de mil millones de computadoras de producto general en uso
+                en todo el mundo, y se espera que esta cifra se duplique en los proximos
+                anillos.
+            </p>
+
+            <p>
+                Los chips de computadora (microprocesadores) controlan innumerables dispositivos.
+                Estos sistemas incrustados incluyen frenos antibloqueo en los autos,
+                sistemas de navegacion, electrodomesticos inteligentes, sistemas de 
+                seguridad en el hogar, telefonos celulares y Smartphone, robots, 
+                intersecciones de trafico inteligente, sistemas para evitar colisiones,
+                controladores de videojuegos y mas. La inmensa mayoria de los microprocasadores que
+                se producen cada año se incrustan en dispositivos que no son computadoras
+                de proposito general.
+            </p>
+
+            <footer>
+                <em>
+                    &copy; 2012 por Pearson Education, Inc.
+                    Todos los derechos reservados.
+                </em>
+            </footer>
+        </div>
+
+        <a href= "/Capitulo5/Ejemplos/Ejemplos.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso" >
+        </a>
+    </body>
+</html>

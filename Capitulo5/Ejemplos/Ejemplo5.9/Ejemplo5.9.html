@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.9: reflejo.html -->
+<!-- Reflejos en CSS3. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Reflejo
+        </title>
+
+        <style type = "text/css">
+            img {margin-right: 30px;}
+            img.below   {
+                -webkit-box-reflect: below 5px
+                    -webkit-gradient(
+                        linear, left top, left bottom, from(transparent), to(white)
+                    );
+            }
+            img.right   {
+                -webkit-box-reflect: right 5px
+                    -webkit-gradient(
+                        linear, right top, left top, from(transparent), to(white)
+                    );
+            }
+            .enlace-regreso {
+                display: inline-block;
+                margin-top: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img class = "below" src = "/Imagenes/libro java.jpg" width = "138" height = "180" alt = "Portada del libro Java How to Program">
+        <img class = "right" src = "/Imagenes/libro java.jpg" width = "138" height = "180" alt = "Portada del libro Java How to Program">
+
+
+        <div>
+            <a class = "enlace-regreso" href= "/Capitulo5/Ejemplos/Ejemplos.html">
+                <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso" >
+            </a>
+        </div>
+    </body>
+</html>
