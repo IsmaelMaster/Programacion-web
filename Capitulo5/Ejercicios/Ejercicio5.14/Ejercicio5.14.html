@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- Este es el titulo de mi pagina-->
+        <title>
+            Ejercicio 12
+        </title>
+
+        <style type="text/css">
+            /* Contenedor para alinear las 4 imágenes */
+            .galeria {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                margin-top: 80px;
+            }
+
+            .galeria img {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.5s ease;   /* transición suave */
+                -webkit-transition: -webkit-transform 0.5s ease;
+                -moz-transition: -moz-transform 0.5s ease;
+                -o-transition: -o-transform 0.5s ease;
+            }
+
+            /* Al pasar el ratón, la imagen aumenta 20% */
+            .galeria img:hover {
+                transform: scale(1.2, 1.2);
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="galeria">
+            <img src="/Imagenes/escandalosos.png" alt="Imagen 1">
+            <img src="/Imagenes/gravity falls.jpg" alt="Imagen 2">
+            <img src="/Imagenes/mario.jpg" alt="Imagen 3">
+            <img src="/Imagenes/yoshi.jpg" alt="Imagen 4">
+        </div>
+
+        <a href="/Capitulo5/Ejercicios/Ejercicios.html">
+            <img src="/Imagenes/regreso.png" width="90" height="120" alt="Regreso">
+        </a>
+    </body>
+</html>

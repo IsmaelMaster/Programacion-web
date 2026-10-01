@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 5
+        </title>
+
+        <style type = "text/css">
+            div {
+                width: 500px;
+                height: 500px;
+            }
+            #diagonal   {
+                width: 200px;
+                height: 200px;
+                border: 3px solid black;
+                padding: 5px 20px;
+                text-align: center;
+                background: -webkit-gradient(
+                    linear, left top, right bottom,
+                    color-stop(10%, red), color-stop(20%, orange),
+                    color-stop(30%, yellow), color-stop(40%, green)
+                    color-stop(50%, blue), color-stop(60%, indigo),
+                    color-stop(70%, purple));
+                background: -moz-linear-gradient(
+                    top left, red 10%, orange 20%, yellow 30%, green 40%, 
+                    blue 50%, indigo 60%, purple 70%);
+                background: linear-gradient(
+                    135deg, red 10%, orange 20%, yellow 30%, green 40%, 
+                    blue 50%, indigo 60%, purple 70%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            Gradiente lineal diagonal
+        </h1>
+
+        <div id = "diagonal"></div>
+        
+        <a href= "/Capitulo5/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

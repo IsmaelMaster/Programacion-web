@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 11
+        </title>
+
+        <link href = 'http://fonts.googleapis.com/css?family=Rosario' rel = 'stylesheet' type = 'text/css'>
+
+        <style type = "text/css">
+            body    {
+                margin: 0;
+                padding: 20px;
+                font-family: "Rosario", sans-serif;
+            }
+            .flexbox    {
+                width: 600px;
+                height: 800px;
+                display: -webkit-box;
+                display: box;
+                -webkit-box-orient: horizontal;
+                box-orient: horizontal;
+                margin-bottom: 30px;
+            }
+            .flexbox > div  {
+                -webkit-transition: 1s ease-out;
+                transition: 1s ease-out;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                border: 2px solid black;
+                width: 120px;
+                margin: 10px -10px 10px 0px;
+                padding: 20px;
+                box-shadow: 10px 10px 10px dimgrey;
+            }
+            .flexbox > div:nth-child(1){background-color: lightgrey;}
+
+            .flexbox > div:hover    {
+                width: 200px; 
+                color: white; 
+                font-weight: bold;
+            }
+
+            .flexbox > div:nth-child(1):hover   {background-color: royalblue;}
+            p   {
+                height: 250px; 
+                overflow: hidden; 
+                font-family: "Rosario";
+            }
+
+            .regreso {
+                display: inline-block;
+                margin-top: 20px;
+                position: relative;
+                z-index: 10;
+            }
+            .regreso img {
+                display: block;
+                width: 90px;
+                height: 120px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class = "flexbox">
+            <div>
+                <img src = "/Imagenes/like.jpg" alt = "Icono de buena practica de programacion">
+                <p>
+                    Las buenas practicas de programacion indican las tecnicas que le ayudan a producir
+                    programas mas claros, comprensibles y faciles de mantener.
+                </p>
+            </div>
+        </div>
+
+        <a class = "regreso" href= "/Capitulo5/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso" >
+        </a>
+    </body>
+</html>

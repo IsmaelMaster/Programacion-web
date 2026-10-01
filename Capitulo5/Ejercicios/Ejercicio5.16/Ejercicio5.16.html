@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- MUY IMPORTANTE: la etiqueta viewport para móviles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Ejercicio 14
+        </title>
+
+        <style type="text/css">
+            /* ---------- Estilos generales ---------- */
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background: white;
+                color: gray;
+                line-height: 1.6;
+            }
+
+            header {
+                background: gray;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.8em;
+            }
+
+            /* ---------- Contenedor principal (2 columnas) ---------- */
+            .contenedor {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 20px;
+            }
+
+            .principal {
+                flex: 3;                 /* ocupa 3/4 del ancho */
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .lateral {
+                flex: 1;                 /* ocupa 1/4 del ancho */
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .lateral h3 {
+                margin-top: 0;
+                color: blue;
+            }
+
+            footer {
+                background: gray;
+                color: white;
+                text-align: center;
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 0.9em;
+            }
+
+            /* ---------- MEDIA QUERY para móviles ---------- */
+            /* Si la pantalla mide 480px o menos, todo pasa a 1 columna */
+            @media (max-width: 480px) {
+                .contenedor {
+                    flex-direction: column;   /* apila los bloques verticalmente */
+                }
+
+                header h1 {
+                    font-size: 1.3em;
+                }
+
+                body {
+                    padding: 10px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Mi página multicolumna</h1>
+            <p>Diseño adaptable con consultas de medios</p>
+        </header>
+
+        <div class="contenedor">
+            <main class="principal">
+                <h2>Artículo principal</h2>
+                <p>
+                    Este bloque ocupa la mayor parte del ancho en pantallas de escritorio.
+                    Cuando la ventana se reduce a 480px o menos, el diseño cambia automáticamente
+                    y todos los bloques se apilan en una sola columna, facilitando la lectura
+                    en dispositivos móviles.
+                </p>
+                <p>
+                    Las consultas de medios (<em>media queries</em>) son una herramienta
+                    fundamental del diseño web responsive. Permiten adaptar la presentación
+                    de una página según las características del dispositivo: ancho de pantalla,
+                    altura, orientación, resolución, etc.
+                </p>
+                <p>
+                    En este ejemplo usamos <code>@media (max-width: 480px)</code> para detectar
+                    teléfonos móviles y reorganizar el contenido en una sola columna.
+                </p>
+            </main>
+
+            <aside class="lateral">
+                <h3>Barra lateral</h3>
+                <p>Enlaces de interés:</p>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Artículos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <p>
+                    Esta barra aparece a la derecha en escritorio y debajo del artículo
+                    principal en móviles.
+                </p>
+            </aside>
+        </div>
+
+        <footer>
+            &copy; 2026 - Ejercicio 5.16 Consultas de medios
+        </footer>
+
+        <a href= "/Capitulo5/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso" >
+        </a>
+    </body>
+</html>
