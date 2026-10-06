@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!-- Fig. 6.14: bienvenido5.html -->
+<!-- Uso de operadores de igualdad y relacionales. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Uso de operadores relacionales
+        </title>
+
+        <script>
+            var nombre; // Cadena introducida por el usuario
+            var ahora = new Date(); // Fecha y hora actuales
+            var hora = ahora.getHours(); // Hora actual (0 - 23)
+
+            // Lee el nombre del cuadro indicador como una columna
+            nombre = window.prompt("Escriba su nombre");
+
+            // Determina si es de mañana
+            if (hora < 12)
+                document.write("<h1> Buenos dias. ");
+
+            // Determina si la hora es PM
+            if (hora >= 12){
+                // Convierte a reloj de 12 horas
+                hora = hora - 12;
+
+                // Determina si es antes de las 6 PM
+                if (hora < 6)
+                    document.write("<h1> Buenas tardes. ");
+
+                //Determina si es despues de las 6 PM
+                if (hora >= 6)
+                    document.write("<h1> Buenas noches. ")
+            } // end if
+
+            document.writeln(nombre + ", bienvenido a la programacion en JavaScript </h1>");
+        </script>
+    </head>
+
+    <body>
+        <a href= "/Capitulo6/Ejemplos/Ejemplos.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

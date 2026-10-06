@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!-- Fig. 6.5: bienvenido4.html -->
+<!-- Cuadro indicador utilizado en una pantalla de bienvenida. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Uso de cuadros prompt y alert
+        </title>
+
+        <script>
+            var nombre; // Cadena introducida por el usuario
+
+            // Lee el nombre del cuadro prompt como una cadena
+            nombre = window.prompt("Escribe su nombre");
+
+            document.writeln("<h1> Hola " + nombre + ", bienvenido a la programacion en JavaScript </h1>");
+        </script>
+    </head>
+
+    <body>
+        <a href= "/Capitulo6/Ejemplos/Ejemplos.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>
