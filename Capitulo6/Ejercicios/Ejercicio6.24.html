@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 18
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            6.24 Escriba una secuencia de comandos que calcule los cuadrados y cubos de los numeros del 0 al 5 y produsca texto de HTML5 que muestre los valores resultantes en un formato de tabla de HTML5, como se muestra a continuacion.
+            [Nota: Esta secuencia de comandos no requiere entrada del usuario].
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            6.24
+            <li>
+                <script>
+                    document.write("<table border='1' cellpadding='5'>");
+                    document.write("<tr><th>número</th><th>cuadrado</th><th>cubo</th></tr>");
+                    
+                    for (var i = 0; i <= 5; i++) {
+                        document.write("<tr>");
+                        document.write("<td>" + i + "</td>");
+                        document.write("<td>" + (i * i) + "</td>");
+                        document.write("<td>" + (i * i * i) + "</td>");
+                        document.write("</tr>");
+                    }
+                    
+                    document.write("</table>");
+                </script>
+            </li>
+        </p>
+        
+        <a href= "/Capitulo6/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

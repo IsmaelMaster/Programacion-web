@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 14
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            6.20 Escriba una secuencia de comandos que lea cinco enteros, determine y produzca marcado que muestre los enteros menor y mayor en el grupo.
+            Use solo las tecnicas de secuencias de comandos que aprendio en este capitulo.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            6.20
+            <li>
+                <script>
+                    var a = parseInt(window.prompt("Entero 1:"));
+                    var b = parseInt(window.prompt("Entero 2:"));
+                    var c = parseInt(window.prompt("Entero 3:"));
+                    var d = parseInt(window.prompt("Entero 4:"));
+                    var e = parseInt(window.prompt("Entero 5:"));
+
+                    var menor = Math.min(a, b, c, d, e);
+                    var mayor = Math.max(a, b, c, d, e);
+
+                    document.write("<p>El número menor es: " + menor + "</p>");
+                    document.write("<p>El número mayor es: " + mayor + "</p>");
+                </script>
+            </li>
+        </p>
+        
+        <a href= "/Capitulo6/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

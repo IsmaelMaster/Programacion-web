@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 17
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            6.23 Escriba una secuencia de comandos que reciba tres numeros, determine y produzca marcado que muestre la cantidad de numeros negativos, positivos y ceros introducidos.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            6.23
+            <li>
+                <script>
+                    var x1 = parseFloat(window.prompt("Número 1:"));
+                    var x2 = parseFloat(window.prompt("Número 2:"));
+                    var x3 = parseFloat(window.prompt("Número 3:"));
+
+                    var negativos = 0;
+                    var positivos = 0;
+                    var ceros = 0;
+
+                    var numeros = [x1, x2, x3];
+                    for (var i = 0; i < numeros.length; i++) {
+                        if (numeros[i] < 0) {
+                            negativos++;
+                        } else if (numeros[i] > 0) {
+                            positivos++;
+                        } else {
+                            ceros++;
+                        }
+                    }
+
+                    document.write("<p>Negativos: " + negativos + "</p>");
+                    document.write("<p>Positivos: " + positivos + "</p>");
+                    document.write("<p>Ceros: " + ceros + "</p>");
+                </script>
+            </li>
+        </p>
+        
+        <a href= "/Capitulo6/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

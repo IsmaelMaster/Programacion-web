@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 16
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            6.22 Escriba una secuencia de comandos que lea dos enteros, determine y produzca texto de HTML5 que muestre si el primero es multiplo del segundo.
+            [Sugerencia: Use el operador residuo].
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            6.22
+            <li>
+                <script>
+                    var numA = parseInt(window.prompt("Ingrese el primer entero:"));
+                    var numB = parseInt(window.prompt("Ingrese el segundo entero:"));
+
+                    if (numA % numB === 0) {
+                        document.write("<p>" + numA + " es múltiplo de " + numB + "</p>");
+                    } else {
+                        document.write("<p>" + numA + " no es múltiplo de " + numB + "</p>");
+                    }
+                </script>
+            </li>
+        </p>
+        
+        <a href= "/Capitulo6/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

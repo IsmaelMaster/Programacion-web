@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 10
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            6.16 Escriba una secuencia de comandos que pida al usuario que escriba dos numeros, obtenga los dos numeros del usuario y produzca texto que muestre la suma, producto, diferencia y cociente.
+            Use las tecnicas que se muestran en la figura 6.7.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            6.16
+            <li>
+                <script>
+                    var num1 = parseFloat(window.prompt("Escriba el primer número:"));
+                    var num2 = parseFloat(window.prompt("Escriba el segundo número:"));
+
+                    var suma = num1 + num2;
+                    var producto = num1 * num2;
+                    var diferencia = num1 - num2;
+                    var cociente = num1 / num2;
+
+                    document.write("Suma: " + suma + "<br>");
+                    document.write("Producto: " + producto + "<br>");
+                    document.write("Diferencia: " + diferencia + "<br>");
+                    document.write("Cociente: " + cociente + "<br>");
+                </script>
+            </li>
+        </p>
+        
+        <a href= "/Capitulo6/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 3
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            7.11 Los conductores se preocupan acerca del kilometraje de sus automóviles. 
+            Un conductor ha llevado el control de varios reabastecimientos de gasolina, registrando los kilómetros conducidos y los litros usados en cada viaje. 
+            Desarrolle una secuencia de conmandos que reciba como entrada los kilómetros conducidas y los litros usados por cada viaje.
+            La secuencia de comandos debe calcular y producir texto de HTML5 que muestre el número de kilómetros por litro obtenidos en cada viaje, y debe imprimir el total de kilómetros por litro obtenidos en todos los reabastecimientos hasta este punto. 
+            Use diálogos prompt para obtener los datos del usuario.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            7.11 
+            <script>
+                let totalKm = 0, totalLitros = 0, viaje = 1;
+                let km = parseFloat(prompt("Kilómetros del viaje " + viaje + " (-1 para terminar):"));
+
+                while (km !== -1) {
+                    let litros = parseFloat(prompt("Litros usados en el viaje " + viaje + ":"));
+                    if (litros > 0) {
+                        totalKm += km;
+                        totalLitros += litros;
+                        document.writeln(`<p>Viaje ${viaje}: ${(km / litros).toFixed(2)} km/L</p>`);
+                    } 
+                    else {
+                        document.writeln(`<p>Viaje ${viaje}: litros no válidos, se omite.</p>`);
+                    }
+                    viaje++;
+                    km = parseFloat(prompt("Kilómetros del viaje " + viaje + " (-1 para terminar):"));
+                }
+
+                if (totalLitros > 0)
+                    document.writeln(`<p><strong>Total: ${(totalKm / totalLitros).toFixed(2)} km/L</strong></p>`);
+            </script>
+        </p>
+        
+        <a href= "/Capitulo7/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

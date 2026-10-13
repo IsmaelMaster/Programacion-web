@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 11
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            6.17 Escriba una secuencia de comandos que pida al usuario que introduzca dos enteros, obtenga los numeros del usuario y produzca texto que muestre el numero mas grande seguido de la palabra "es mayor que" en un dialogo de alerta.
+            Si los numeros son iguales, imprima texto de HTML5 que muestre el mensaje "Estos numeros son iguales". 
+            Use las tecnicas mostradas en la figura 6.14.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            6.17
+            <li>
+                <script>
+                    var entero1 = parseInt(window.prompt("Escriba el primer entero:"));
+                    var entero2 = parseInt(window.prompt("Escriba el segundo entero:"));
+
+                    if (entero1 > entero2) {
+                        window.alert(entero1 + " es mayor que " + entero2);
+                    }
+                    if (entero2 > entero1) {
+                        window.alert(entero2 + " es mayor que " + entero1);
+                    }
+                    if (entero1 === entero2) {
+                        window.alert("Estos números son iguales");
+                    }
+                </script>
+            </li>
+        </p>
+        
+        <a href= "/Capitulo6/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>
