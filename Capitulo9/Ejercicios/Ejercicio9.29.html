@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.29
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.29 Escriba una función recursiva llamada potencia(base, exponente) que, cuando se invoque, devuelva base elevada a exponente. Por ejemplo, potencia(3, 4) = 3 * 3 * 3 * 3. Suponga que exponente es un entero mayor o igual que 1. El paso de recursividad utilizaría la siguiente relación: base^exponente = base * base^(exponente − 1). La condición de terminación ocurre cuando exponente es igual a 1, ya que base^1 = base. Incorpore esta función en una secuencia de comandos que permita al usuario introducir la base y el exponente.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.29
+         </h3>
+         <script>
+            function potencia(base, exponente) {
+               if (exponente === 1)
+                  return base;
+
+               return base * potencia(base, exponente - 1);
+            }
+
+            const base = parseFloat(prompt("Introduzca la base:"));
+            const exponente = parseInt(prompt("Introduzca el exponente (entero mayor o igual que 1):"));
+
+            if (isNaN(base) || isNaN(exponente) || exponente < 1)
+               document.writeln("<p>Valores no válidos.</p>");
+            else
+               document.writeln(`<p>${base} elevado a ${exponente} = ${potencia(base, exponente)}</p>`);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 2
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.5 Sin ejecutarla, determine lo que imprime esta secuencia de comandos.
+         <p>
+            <pre>
+               <code>
+                  &lt;!DOCTYPE html&gt;
+                  &lt;!-- Ejercicio 8.5: ej08_05.html --&gt;
+                  &lt;html&gt;
+                     &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;title&gt;
+                           Misterio
+                        &lt;/title&gt;
+                        &lt;script&gt;
+                           document.writeln("&lt;table&gt;");
+                           
+                           for (var i = 1; i &lt;= 10; i++){
+                              document.writeln("&lt;tr&gt;");
+
+                              for (var j = 1; j &lt;= 10; j++)
+                                 document.writeln("&lt;td&gt;(" + i + ", " + j + ")&lt;/td&gt;");
+                              
+                              document.writeln("&lt;/tr&gt;");
+                           } // Fin de for
+
+                           document.writeln("&lt;/table&gt;");
+                        &lt;/script&gt;
+                     &lt;/head&gt;
+                     &lt;body&gt;
+                     &lt;/body&gt;
+                  &lt;/html&gt;
+               </code>
+            </pre>
+         </p>
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.5
+         <p>
+            <script>
+
+               document.writeln( "<table>" );
+
+               for ( var i = 1; i <= 10; i++ )
+               {
+                  document.writeln( "<tr>" );
+
+                  for ( var j = 1; j <= 5; j++ )
+                     document.writeln( "<td>(" + i + ", " + j + ")</td>" );
+
+                  document.writeln( "</tr>" );
+               } // fin de for
+
+               document.writeln( "</table>" );
+
+            </script> 
+         </p>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

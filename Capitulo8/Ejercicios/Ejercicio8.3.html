@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Autoevaluacion
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios de autoevaluacion
+        </h1>
+
+        <p>
+            8.3 Encuentre el error en cada uno de los siguientes segmentos de código, y explique cómo corregido:
+            <ol>
+                <li>
+                    <strong>
+                        x = 1;
+                        <br>
+                        while ( x <= 10 );
+                        <br>
+                            ++x;
+                            <br>
+                        }
+                    </strong>
+                </li>
+
+                <li>
+                    <strong>
+                        switch( n ) {
+                            <br>
+                            case 1:
+                                <br>
+                                document.writeln( "El numero es 1" );
+                            <br>
+                            case 2:
+                                <br>
+                                document.writeln( "El numero es 2" );
+                                <br>
+                                break;
+                            <br>
+                            default:
+                                <br>
+                                document.writeln( "El numero no es 1 ni 2" );
+                                <br>
+                                break;
+                        <br>
+                        }
+                    </strong>
+                </li>
+
+                <li>
+                    El siguiente código debe imprimir los valores 1 a 10:
+                    <br>
+                    <strong>
+                        n = 1;
+                        <br>
+                        while ( n < 10 )
+                            <br>
+                            document.writeln( n++) ;
+                    </strong>
+                </li>
+            </ol>
+        </p>
+
+        <h1>
+            Ejercicios de autoevaluacion ya resueltos
+        </h1>
+
+        <p>
+            8.2
+            <ol>
+                <li>
+                    <strong>
+                        Error:
+                    </strong>
+                    El pumo y coma después del encabezado while provoca un ciclo infinito; además falta una llave izquierda.
+                    <br>
+                    <strong>
+                        Correccion:
+                    </strong>
+                    Reemplazar el punto y coma por una llave izquierda ({), o eliminar tanto el punto y coma (;) como la llave derecha (}).
+                </li>
+
+                <li>
+                    <strong>
+                        Error:
+                    </strong>
+                    Falta una instrucción break en las instrucciones del primer case.
+                    <br>
+                    <strong>
+                        Correcciones:
+                    </strong>
+                    Agregue una instrucción break ai final de las instrucciones para el primer case. 
+                    Cabe mencionar que esta omisión no es necesariamente un error, si desea que la instrucción del case 2: se ejecute siempre que lo haga la instrucción del case 1:.
+                </li>
+
+                <li>
+                    <strong>
+                        Error:
+                    </strong>
+                    Se está utilizando un operador relacional inadecuado en la condición de continuación de la instrucción de repetición while.
+                    <br>
+                    <strong>
+                        Correccion:
+                    </strong>
+                    Use <= en vez de <, o cambie el 10 a 11
+                </li>
+            </ol>
+        </p>
+        
+        <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 8
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.11 Un vendedor minorista en línea vende cinco productos distintos, cuyos precios de venta son los siguientes: 
+         producto 1, $2.98; producto 2, $4.50; producto 3, $9.98; producto 4, $4.49 y producto 5, $6.87. 
+         Escriba una secuencia de comandos que lea una serie de pares de números, como se muestra a continuación:
+         <ol>
+            <li>
+               Numero de productos;
+            </li>
+
+            <li>
+               Cantidad vendida durante un dia.
+            </li>
+         </ol>
+
+         Su programa debe utilizar una instrucción switch para determinar el precio de venta de cada producto; además debe calcular y producir HTML5 para mostrar el valor total de venta de todos los productos vendidos la semana pasada.
+         Use el cuadro de diálogo del indicador de comandos para obtener el número de producto y la cantidad requerida por el usuario. 
+         Use un ciclo controlado por centinela para determinar cuándo debe el programa dejar de iterar para mostrar los resultados finales
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.11
+         <p>
+            <script>
+               function precioProducto(numero) {
+                  switch (numero) {
+                     case 1: return 2.98;
+                     case 2: return 4.50;
+                     case 3: return 9.98;
+                     case 4: return 4.49;
+                     case 5: return 6.87;
+                     default: return null;
+                  }
+               }
+
+               let total = 0;
+               let producto = parseInt(prompt("Número de producto (1 a 5), -1 para terminar:"));
+
+               while (producto !== -1) {
+                  const precio = precioProducto(producto);
+
+                  if (precio === null) {
+                     alert("Número de producto no válido.");
+                  } else {
+                     const cantidad = parseInt(prompt("Cantidad vendida:"));
+                     total += precio * cantidad;
+                  }
+
+                  producto = parseInt(prompt("Número de producto (1 a 5), -1 para terminar:"));
+               }
+
+               document.writeln(`<p>Valor total de las ventas de la semana: $${total.toFixed(2)}</p>`);
+            </script> 
+         </p>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

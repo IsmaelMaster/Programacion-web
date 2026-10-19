@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.26
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.26 Modifique el programa del ejercicio 9.25 para que cuente el número de intentos realizados por el jugador. Si el número es 10 o menos, muestre "¡Conoce el secreto o tuvo suerte!" Si el jugador adivina el número en 10 intentos, muestre "¡Entonces sí conoce el secreto!" Si el jugador realiza más de 10 intentos, muestre "¡Debería poder hacerlo mejor!" ¿Por qué no debe tomar más de 10 intentos? Con cada intento correcto, el jugador debería ser capaz de eliminar la mitad de los números. Ahora muestre por qué es posible adivinar cualquier número entre 1 y 1000 en 10 intentos o menos.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.26
+         </h3>
+         <p>Adivine un número entre 1 y 1000</p>
+         <form>
+            <input type="text" id="intento">
+            <input type="button" id="botonEnviar" value="Enviar">
+         </form>
+         <p id="mensaje"></p>
+
+         <p>
+            <strong>¿Por qué 10 intentos son suficientes?</strong> Cada intento reduce a la mitad el número de posibilidades. Después de 1 intento quedan unas 500, después de 2 quedan 250, y así sucesivamente. Como 2<sup>10</sup> = 1024 es mayor que 1000, después de 10 intentos sólo queda una posibilidad.
+         </p>
+
+         <script>
+            let secreto = 1 + Math.floor(Math.random() * 1000);
+            let intentos = 0;
+
+            function enviarIntento() {
+               const campo = document.getElementById("intento");
+               const intento = parseInt(campo.value);
+               const mensaje = document.getElementById("mensaje");
+
+               if (isNaN(intento) || intento < 1 || intento > 1000) {
+                  mensaje.textContent = "Introduzca un número entre 1 y 1000.";
+               } else {
+                  intentos++;
+
+                  if (intento < secreto) {
+                     mensaje.textContent = "Demasiado bajo. Intente de nuevo.";
+                  } else if (intento > secreto) {
+                     mensaje.textContent = "Demasiado alto. Intente de nuevo.";
+                  } else {
+                     let comentario;
+
+                     if (intentos < 10)
+                        comentario = "¡Conoce el secreto o tuvo suerte!";
+                     else if (intentos === 10)
+                        comentario = "¡Entonces sí conoce el secreto!";
+                     else
+                        comentario = "¡Debería poder hacerlo mejor!";
+
+                     mensaje.textContent = `¡Felicidades! (¡Adivinó el número en ${intentos} intentos!) ${comentario}`;
+
+                     // Nuevo juego
+                     secreto = 1 + Math.floor(Math.random() * 1000);
+                     intentos = 0;
+                  }
+               }
+
+               campo.value = "";
+               campo.focus();
+            }
+
+            document.getElementById("botonEnviar").addEventListener("click", enviarIntento);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

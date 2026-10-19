@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.21
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.21 Escriba una secuencia de comandos que simule el lanzamiento de monedas. Deje que el programa lance la moneda cada vez que el usuario haga clic en el botón Lanzar. Cuente el número de veces que aparezca cada lado de la moneda. Muestre los resultados. El programa deberá llamar a una función separada de nombre arrojar, que no reciba argumentos y devuelva false para cruz y true para cara. [Nota: el programa simula de manera realista el lanzamiento de monedas; cada lado de la moneda debe aparecer aproximadamente la mitad del tiempo.]
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.21
+         </h3>
+         <form>
+            <input type="button" id="botonLanzar" value="Lanzar">
+         </form>
+         <p>Caras: <span id="caras">0</span></p>
+         <p>Cruces: <span id="cruces">0</span></p>
+         <p id="ultimo"></p>
+
+         <script>
+            let caras = 0;
+            let cruces = 0;
+
+            // Devuelve true para cara y false para cruz
+            function arrojar() {
+               return Math.floor(Math.random() * 2) === 1;
+            }
+
+            document.getElementById("botonLanzar").addEventListener("click", () => {
+               const cara = arrojar();
+
+               if (cara)
+                  caras++;
+               else
+                  cruces++;
+
+               document.getElementById("caras").textContent = caras;
+               document.getElementById("cruces").textContent = cruces;
+               document.getElementById("ultimo").textContent = "Último lanzamiento: " + (cara ? "cara" : "cruz");
+            });
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

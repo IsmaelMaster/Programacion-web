@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.20
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.20 Escriba una función llamada puntosCalidad que reciba el promedio de un estudiante y devuelva 4 si el promedio es de 90 a 100, 3 si es de 80 a 89, 2 si es de 70 a 79, 1 si es de 60 a 69 y 0 si es menor que 60. Incorpore la función en una secuencia de comandos que lea un valor del usuario.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.20
+         </h3>
+         <script>
+            function puntosCalidad(promedio) {
+               if (promedio >= 90) return 4;
+               if (promedio >= 80) return 3;
+               if (promedio >= 70) return 2;
+               if (promedio >= 60) return 1;
+               return 0;
+            }
+
+            const promedio = parseFloat(prompt("Introduzca el promedio del estudiante:"));
+
+            if (isNaN(promedio))
+               document.writeln("<p>Valor no válido.</p>");
+            else
+               document.writeln(`<p>Puntos de calidad: ${puntosCalidad(promedio)}</p>`);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

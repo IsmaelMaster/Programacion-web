@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.6
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.6 Escriba un programa de JavaScript completo para pedir al usuario el radio de una esfera y luego llame a la función volumenEsfera para calcular y mostrar el volumen de la esfera. Use la instrucción volumen = (4.0 / 3.0) * Math.PI * Math.pow(radio, 3); para calcular el volumen. El usuario debe introducir el radio en un elemento input de tipo "number" dentro de un elemento form. Proporcione al elemento input el id "campoEntrada". Use un elemento input de tipo "button" en el elemento form para que el usuario pueda iniciar el cálculo.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.6
+         </h3>
+         <form>
+            <label>Radio de la esfera: <input type="number" id="campoEntrada" step="any"></label>
+            <input type="button" id="botonCalcular" value="Calcular volumen">
+         </form>
+         <p id="resultado"></p>
+
+         <script>
+            function volumenEsfera(radio) {
+               return (4.0 / 3.0) * Math.PI * Math.pow(radio, 3);
+            }
+
+            function mostrarVolumen() {
+               const radio = parseFloat(document.getElementById("campoEntrada").value);
+               const resultado = document.getElementById("resultado");
+
+               if (isNaN(radio) || radio < 0) {
+                  resultado.textContent = "Introduzca un radio válido.";
+                  return;
+               }
+
+               const volumen = volumenEsfera(radio);
+               resultado.textContent = "El volumen de la esfera es: " + volumen.toFixed(4);
+            }
+
+            document.getElementById("botonCalcular").addEventListener("click", mostrarVolumen);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

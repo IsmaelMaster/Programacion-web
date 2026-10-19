@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.23
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.23 Modifique el programa del ejercicio 9.22 para que imprima una variedad de contenido para cada respuesta correcta y cada respuesta incorrecta. El conjunto de respuestas correctas es: ¡Muy bien!, ¡Excelente!, ¡Buen trabajo!, ¡Siga así! El conjunto de respuestas incorrectas es: No. Intente de nuevo, Equivocado. Trate una vez más, No se dé por vencido, No. Siga intentándolo. Use la generación de números aleatorios para elegir un número del 1 al 4 que se utilice para seleccionar una respuesta apropiada a cada cuestión. Use una instrucción switch para emitir las respuestas.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.23
+         </h3>
+         <p id="pregunta"></p>
+         <form>
+            <input type="text" id="respuesta">
+            <input type="button" id="botonResponder" value="Responder">
+         </form>
+         <p id="mensaje"></p>
+
+         <script>
+            let numero1, numero2;
+
+            function nuevaPregunta() {
+               numero1 = 1 + Math.floor(Math.random() * 9);
+               numero2 = 1 + Math.floor(Math.random() * 9);
+               document.getElementById("pregunta").textContent = `¿Cuánto es ${numero1} por ${numero2}?`;
+            }
+
+            function respuestaCorrecta() {
+               const opcion = 1 + Math.floor(Math.random() * 4);
+
+               switch (opcion) {
+                  case 1: return "¡Muy bien!";
+                  case 2: return "¡Excelente!";
+                  case 3: return "¡Buen trabajo!";
+                  case 4: return "¡Siga así!";
+               }
+            }
+
+            function respuestaIncorrecta() {
+               const opcion = 1 + Math.floor(Math.random() * 4);
+
+               switch (opcion) {
+                  case 1: return "No. Intente de nuevo.";
+                  case 2: return "Equivocado. Trate una vez más.";
+                  case 3: return "No se dé por vencido.";
+                  case 4: return "No. Siga intentándolo.";
+               }
+            }
+
+            function verificarRespuesta() {
+               const campo = document.getElementById("respuesta");
+               const respuesta = parseInt(campo.value);
+               const mensaje = document.getElementById("mensaje");
+
+               if (respuesta === numero1 * numero2) {
+                  mensaje.textContent = respuestaCorrecta();
+                  nuevaPregunta();
+               } else {
+                  mensaje.textContent = respuestaIncorrecta();
+               }
+
+               campo.value = "";
+               campo.focus();
+            }
+
+            document.getElementById("botonResponder").addEventListener("click", verificarRespuesta);
+            nuevaPregunta();
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

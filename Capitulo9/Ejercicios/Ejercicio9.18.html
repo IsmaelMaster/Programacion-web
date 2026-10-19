@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.18
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.18 Escriba una función llamada minimo3 que devuelva el menor de tres números de punto flotante. Use la función Math.min para implementar minimo3. Incorpore la función en una secuencia de comandos que lea tres valores del usuario y determine el valor más pequeño.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.18
+         </h3>
+         <script>
+            function minimo3(a, b, c) {
+               return Math.min(a, b, c);
+            }
+
+            const a = parseFloat(prompt("Primer número:"));
+            const b = parseFloat(prompt("Segundo número:"));
+            const c = parseFloat(prompt("Tercer número:"));
+
+            document.writeln(`<p>El valor más pequeño es: ${minimo3(a, b, c)}</p>`);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

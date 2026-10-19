@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.5
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.5 Localice el error en cada uno de los siguientes segmentos de programa y explique cómo corregirlo: a) method g() { document.writeln("Dentro del método g"); } b) // Esta función debe devolver la suma de sus argumentos function suma(x, y) { var resultado; resultado = x + y; } c) function f(a) { document.writeln(a); };
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.5
+         </h3>
+         <p><strong>a)</strong> Error: method no es la palabra clave que se utiliza para comenzar la definición de una función. Corrección: cambiar method por function.</p>
+         <pre><code>function g()
+{
+   document.writeln("Dentro de la función g");
+}</code></pre>
+
+         <p><strong>b)</strong> Error: se supone que la función debe devolver un valor, pero no lo hace. Corrección: eliminar la variable resultado y colocar la instrucción return x + y; en la función, o agregar la instrucción return resultado; al final del cuerpo de la función.</p>
+         <pre><code>function suma(x, y)
+{
+   return x + y;
+}</code></pre>
+
+         <p><strong>c)</strong> Error: el punto y coma después del paréntesis derecho que encierra la lista de parámetros. Corrección: eliminar el punto y coma después del paréntesis derecho de la lista de parámetros.</p>
+         <pre><code>function f(a)
+{
+   document.writeln(a);
+}</code></pre>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

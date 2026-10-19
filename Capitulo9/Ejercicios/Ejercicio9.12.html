@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.12
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.12 Para cada uno de los siguientes conjuntos de enteros, escriba una sola instrucción que imprima un número al azar del conjunto: a) 2, 4, 6, 8, 10; b) 3, 5, 7, 9, 11; c) 6, 10, 14, 18, 22.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.12
+         </h3>
+         <script>
+            const conjuntos = [
+               ["a) 2, 4, 6, 8, 10", "document.writeln(2 + 2 * Math.floor(Math.random() * 5));", () => 2 + 2 * Math.floor(Math.random() * 5)],
+               ["b) 3, 5, 7, 9, 11", "document.writeln(3 + 2 * Math.floor(Math.random() * 5));", () => 3 + 2 * Math.floor(Math.random() * 5)],
+               ["c) 6, 10, 14, 18, 22", "document.writeln(6 + 4 * Math.floor(Math.random() * 5));", () => 6 + 4 * Math.floor(Math.random() * 5)]
+            ];
+
+            for (const [etiqueta, instruccion, generar] of conjuntos) {
+               document.writeln(`<p><strong>${etiqueta}</strong><br><code>${instruccion}</code><br>Número al azar: ${generar()}</p>`);
+            }
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

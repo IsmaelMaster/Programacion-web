@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 8
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            7.16 Escriba una secuencia de comandos que utilice ciclos para imprimir la siguiente tabla de valores. 
+            Muestre los resultados en una tabb de HTML5. 
+            Use CSS para centrar los datos en cada columna.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            7.16 
+            <script>
+                document.writeln(`
+                <style>
+                    table { border-collapse: collapse; }
+                    td, th { border: 1px solid #333; padding: 6px 14px; text-align: center; }
+                </style>
+                <table>
+                    <tr><th>N</th><th>10 * N</th><th>100 * N</th><th>1000 * N</th></tr>`);
+
+                for (let N = 1; N <= 6; N++) {
+                    document.writeln(`<tr><td>${N}</td><td>${N * 10}</td><td>${N * 100}</td><td>${N * 1000}</td></tr>`);
+                }
+
+                document.writeln("</table>");
+            </script>
+        </p>
+        
+        <a href= "/Capitulo7/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

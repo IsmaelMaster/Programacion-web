@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 15
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            7.23 Escriba una secuencia de comandos que reciba como entrada un entero cifrado de cuatro dígitos (del ejercicio 7.22) y lo descifre para formar el número original.
+
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            7.23 
+            <script>
+                const entrada = prompt("Introduzca el entero cifrado de cuatro dígitos:");
+
+                if (!/^\d{4}$/.test(entrada)) {
+                    document.writeln("<p>Entrada no válida.</p>");
+                } else {
+                    const e = [...entrada].map(Number);
+                    const c = [e[2], e[3], e[0], e[1]];        // deshacer los intercambios
+                    const original = c.map(x => (x + 3) % 10); // restar 7 módulo 10
+                    document.writeln(`<p>Número original: ${original.join("")}</p>`);
+                }
+            </script>
+        </p>
+        
+        <a href= "/Capitulo7/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

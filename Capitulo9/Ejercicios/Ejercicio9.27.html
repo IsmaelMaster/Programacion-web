@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.27
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.27 (Proyecto) Los ejercicios 9.22 al 9.24 desarrollaron un programa de instrucción asistida por computadora para enseñar a un estudiante de primaria a multiplicar. Este ejercicio sugiere mejoras a ese programa. a) Modifique el programa para que permita al usuario introducir la capacidad de nivel de grado. Un nivel de grado de 1 significa que usa dígitos de un solo número en los problemas, un nivel de grado de 2 significa que usa números de hasta dos dígitos, y así en lo sucesivo. b) Modifique el programa para permitir al usuario elegir el tipo de problemas aritméticos que desea estudiar. Una opción de 1 significa sólo problemas de suma, 2 significa sólo problemas de resta, 3 significa sólo problemas de multiplicación, 4 significa sólo problemas de división y 5 significa mezclar al azar problemas de todos estos tipos.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.27
+         </h3>
+         <form>
+            <label>Nivel de grado: <input type="number" id="nivel" min="1" value="1"></label>
+            <label>Tipo de problemas:
+               <select id="tipo">
+                  <option value="1">Suma</option>
+                  <option value="2">Resta</option>
+                  <option value="3">Multiplicación</option>
+                  <option value="4">División</option>
+                  <option value="5">Mezcla</option>
+               </select>
+            </label>
+            <input type="button" id="botonIniciar" value="Iniciar cuestionario">
+         </form>
+
+         <p id="pregunta"></p>
+         <form>
+            <input type="text" id="respuesta">
+            <input type="button" id="botonResponder" value="Responder">
+         </form>
+         <p id="mensaje"></p>
+         <p id="estadisticas"></p>
+
+         <script>
+            let nivel = 1;
+            let tipo = 1;
+            let a, b, correcta;
+            let simbolo;
+            let correctas = 0;
+            let incorrectas = 0;
+
+            // Devuelve un entero de 1 a maximo
+            function entero(maximo) {
+               return 1 + Math.floor(Math.random() * maximo);
+            }
+
+            function respuestaCorrecta() {
+               switch (entero(4)) {
+                  case 1: return "¡Muy bien!";
+                  case 2: return "¡Excelente!";
+                  case 3: return "¡Buen trabajo!";
+                  case 4: return "¡Siga así!";
+               }
+            }
+
+            function respuestaIncorrecta() {
+               switch (entero(4)) {
+                  case 1: return "No. Intente de nuevo.";
+                  case 2: return "Equivocado. Trate una vez más.";
+                  case 3: return "No se dé por vencido.";
+                  case 4: return "No. Siga intentándolo.";
+               }
+            }
+
+            function generarPregunta() {
+               // Nivel 1: 1 a 9; nivel 2: 1 a 99; nivel 3: 1 a 999, etc.
+               const maximo = 10 ** nivel - 1;
+               const tipoActual = tipo === 5 ? entero(4) : tipo;
+
+               switch (tipoActual) {
+                  case 1: // suma
+                     a = entero(maximo);
+                     b = entero(maximo);
+                     correcta = a + b;
+                     simbolo = "+";
+                     break;
+                  case 2: // resta (el resultado nunca es negativo)
+                     a = entero(maximo);
+                     b = entero(maximo);
+                     if (a < b) [a, b] = [b, a];
+                     correcta = a - b;
+                     simbolo = "−";
+                     break;
+                  case 3: // multiplicación
+                     a = entero(maximo);
+                     b = entero(maximo);
+                     correcta = a * b;
+                     simbolo = "×";
+                     break;
+                  case 4: // división exacta
+                     b = entero(maximo);
+                     correcta = entero(maximo);
+                     a = b * correcta;
+                     simbolo = "÷";
+                     break;
+               }
+
+               document.getElementById("pregunta").textContent = `¿Cuánto es ${a} ${simbolo} ${b}?`;
+            }
+
+            function iniciarCuestionario() {
+               nivel = Math.max(1, parseInt(document.getElementById("nivel").value) || 1);
+               tipo = parseInt(document.getElementById("tipo").value);
+               correctas = 0;
+               incorrectas = 0;
+               document.getElementById("estadisticas").textContent = "";
+               document.getElementById("mensaje").textContent = "";
+               generarPregunta();
+            }
+
+            function verificarRespuesta() {
+               const campo = document.getElementById("respuesta");
+               const respuesta = parseInt(campo.value);
+               const mensaje = document.getElementById("mensaje");
+
+               if (respuesta === correcta) {
+                  correctas++;
+                  mensaje.textContent = respuestaCorrecta();
+                  generarPregunta();
+               } else {
+                  incorrectas++;
+                  mensaje.textContent = respuestaIncorrecta();
+               }
+
+               campo.value = "";
+               campo.focus();
+
+               if (correctas + incorrectas === 10) {
+                  const porcentaje = correctas / 10 * 100;
+                  let texto = `Porcentaje de respuestas correctas: ${porcentaje}%. `;
+                  texto += porcentaje < 75
+                     ? "Pida ayuda adicional a su instructor."
+                     : "¡Buen trabajo! Puede pasar al siguiente tema.";
+                  document.getElementById("estadisticas").textContent = texto;
+                  correctas = 0;
+                  incorrectas = 0;
+               }
+            }
+
+            document.getElementById("botonIniciar").addEventListener("click", iniciarCuestionario);
+            document.getElementById("botonResponder").addEventListener("click", verificarRespuesta);
+            iniciarCuestionario();
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

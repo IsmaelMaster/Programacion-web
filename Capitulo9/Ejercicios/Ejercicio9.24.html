@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.24
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.24 Los sistemas más sofisticados de instrucción asistida por computadora monitorean el rendimiento del estudiante durante cierto tiempo. La decisión de comenzar un nuevo tema se basa a menudo en el éxito del estudiante con los temas anteriores. Modifique el programa del ejercicio 9.23 para contar el número de respuestas correctas e incorrectas que escribió el estudiante. Una vez que el estudiante responda 10 preguntas, usted deberá calcular el porcentaje de respuestas correctas. Si el porcentaje es menor del 75 por ciento, muestre "Pida ayuda adicional a su instructor" y reinicie el cuestionario para que otro estudiante pueda intentarlo.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.24
+         </h3>
+         <p id="pregunta"></p>
+         <form>
+            <input type="text" id="respuesta">
+            <input type="button" id="botonResponder" value="Responder">
+         </form>
+         <p id="mensaje"></p>
+         <p id="estadisticas"></p>
+
+         <script>
+            let numero1, numero2;
+            let correctas = 0;
+            let incorrectas = 0;
+
+            function nuevaPregunta() {
+               numero1 = 1 + Math.floor(Math.random() * 9);
+               numero2 = 1 + Math.floor(Math.random() * 9);
+               document.getElementById("pregunta").textContent = `¿Cuánto es ${numero1} por ${numero2}?`;
+            }
+
+            function respuestaCorrecta() {
+               const opcion = 1 + Math.floor(Math.random() * 4);
+
+               switch (opcion) {
+                  case 1: return "¡Muy bien!";
+                  case 2: return "¡Excelente!";
+                  case 3: return "¡Buen trabajo!";
+                  case 4: return "¡Siga así!";
+               }
+            }
+
+            function respuestaIncorrecta() {
+               const opcion = 1 + Math.floor(Math.random() * 4);
+
+               switch (opcion) {
+                  case 1: return "No. Intente de nuevo.";
+                  case 2: return "Equivocado. Trate una vez más.";
+                  case 3: return "No se dé por vencido.";
+                  case 4: return "No. Siga intentándolo.";
+               }
+            }
+
+            function evaluarCuestionario() {
+               const total = correctas + incorrectas;
+               const porcentaje = correctas / total * 100;
+               let mensaje = `Porcentaje de respuestas correctas: ${porcentaje.toFixed(0)}%. `;
+
+               if (porcentaje < 75)
+                  mensaje += "Pida ayuda adicional a su instructor.";
+               else
+                  mensaje += "¡Buen trabajo! Puede pasar al siguiente tema.";
+
+               document.getElementById("estadisticas").textContent = mensaje;
+
+               // Se reinicia el cuestionario para el siguiente estudiante
+               correctas = 0;
+               incorrectas = 0;
+            }
+
+            function verificarRespuesta() {
+               const campo = document.getElementById("respuesta");
+               const respuesta = parseInt(campo.value);
+               const mensaje = document.getElementById("mensaje");
+
+               if (respuesta === numero1 * numero2) {
+                  correctas++;
+                  mensaje.textContent = respuestaCorrecta();
+                  nuevaPregunta();
+               } else {
+                  incorrectas++;
+                  mensaje.textContent = respuestaIncorrecta();
+               }
+
+               campo.value = "";
+               campo.focus();
+
+               if (correctas + incorrectas === 10)
+                  evaluarCuestionario();
+            }
+
+            document.getElementById("botonResponder").addEventListener("click", verificarRespuesta);
+            nuevaPregunta();
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

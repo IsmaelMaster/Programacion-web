@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 10
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.13 Dada la siguiente instruccion switch.
+         <p>
+            <pre>
+               <code>
+                  switch ( k ) {
+                     case 1:
+                        break;
+                     case 2:
+                     case 3:
+                        ++k;
+                     break;
+                     case 4:
+                        --k;
+                        break;
+                     default:
+                        k *= 3;
+                  } // Fin de switch
+
+                  x = k;
+               </code>
+            </pre>
+         </p>
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.13
+         <p>
+            <script>
+               const valores = [1, 2, 3, 4, 10];
+
+               for (const valorInicial of valores) {
+                  let k = valorInicial;
+
+                  switch (k) {
+                     case 1:
+                           break;
+                     case 2:
+                     case 3:
+                           ++k;
+                           break;
+                     case 4:
+                           --k;
+                           break;
+                     default:
+                           k *= -3;
+                  }
+
+                  const x = k;
+                  document.writeln(`<p>k = ${valorInicial} → x = ${x}</p>`);
+               }
+            </script> 
+         </p>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- Fig. 8.6: Interes.html -->
+<!-- Calculo del interes compuesto con un ciclo for. -->
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Calculo del interes compuesto
+        </title>
+
+        <style type = "text/css">
+            table { width: 300px; border-collapse:collapse; background-color: lightblue; }
+            table, td, th { border: lpx solid black; padding: 4px; }
+            th { text-align: left ; color: white; background-color: darkblue; }
+            tr.filaimpar { background-color: white; }
+        </style>
+
+        <script>
+            var monto; // Monto actual de dinero
+            var principal = 1000.00; // Monto principal
+            var tasa = 0.05; // Tasa de interés
+
+            document.writeln("<table>" ); // Comenzar la tabla
+            document.writeln("<caption>Calculo del interes compuesto</caption>" );
+            document.writeln("<thead><tr><th>Año</th>" ); // Encabezado de la columna del año
+            document.writeln("<th>Monto en deposito</th>" ); // Encabezado de la columna del monto
+            document.writeln( "</tr></thead><tbody>" );
+
+            // Imprimir una fila de la tabla para cada año
+            for ( var anio = 1; anio <= 10; ++anio ){
+                monto = principal * Math.pow(1.0 + tasa, anio);
+
+                if ( anio % 2 !== 0 )
+                    document.writeln( "<tr class = filaimpar'><td>" + anio + "</td><td>" + monto.toFixed(2) + "</td></tr>" );
+                else
+                    document.writeln( "<tr><td>" + anio + "</td><td>" + monto.toFixed(2) + "</td></tr>");
+            } // Fin de for
+
+            document.writeln( "</tbody></table>" );
+        </script>
+    </head>
+
+    <body>
+        <a href= "/Capitulo8/Ejemplos/Ejemplos.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.30
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.30 ¿Qué hace la siguiente función? // El parámetro b debe ser un entero positivo para evitar recursividad infinita. function misterio(a, b) { if (b == 1) return a; else return a + misterio(a, b - 1); }
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.30
+         </h3>
+         <p>
+            <strong>Respuesta:</strong> la función calcula <em>a × b</em>. Lo hace mediante sumas repetidas: suma <em>a</em> consigo mismo <em>b</em> veces, reduciendo <em>b</em> en 1 en cada llamada recursiva hasta llegar a 1.
+         </p>
+
+         <script>
+            function misterio(a, b) {
+               if (b == 1)
+                  return a;
+               else
+                  return a + misterio(a, b - 1);
+            }
+
+            const a = parseInt(prompt("Introduzca el primer entero (a):"));
+            const b = parseInt(prompt("Introduzca el segundo entero positivo (b):"));
+
+            if (isNaN(a) || isNaN(b) || b < 1) {
+               document.writeln("<p>Valores no válidos.</p>");
+            } else {
+               document.writeln(`<p>misterio(${a}, ${b}) = ${misterio(a, b)}</p>`);
+               document.writeln(`<p>Comprobación: ${a} × ${b} = ${a * b}</p>`);
+            }
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

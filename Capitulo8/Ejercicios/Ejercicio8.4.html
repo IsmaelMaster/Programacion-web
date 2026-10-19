@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 1
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.4 Encuentre el error en cada uno de los siguientes segmentos de código.
+         [Nota: Puede haber mas de un error.]
+         <ol>
+            <li>
+               For ( x = 100, x >= 1, ++x )
+               <br>
+                  document.writeln( x );
+            </li>
+
+            <li>
+               El siguiente código debe imprimirse sin importar si el valor entero es par o impar:
+               <br>
+               switch ( valor % 2 ){
+                  <br>
+                  caso 0:
+                     <br>
+                     document.writeln( "Entero par" );
+                     <br>
+                  case 1:
+                     <br>
+                     document.writeln( "Entero Impar" );
+               <br>
+               }
+            </li>
+
+            <li>
+               El siguiente código debe imprimir los enteros impares del 19 al 1:
+               <br>
+               for ( x = 19; x >= 1; x += 2 )
+                  <br>
+                  document.writeln( x ); 
+            </li>
+
+            <li>
+               El siguiente código debe imprimir los enteros pares del 2 al 100:
+               <br>
+               contador = 2;
+               <br>
+               do {
+                  <br>
+                  document.writeln( contador );
+                  <br>
+                  contador += 2 ;
+                  <br>
+               } while ( contador < 100 );
+            </li>
+         </ol>
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.4
+         <ol>
+            <li>
+               <strong>
+                  for (var x = 100; x >= 1; --x)
+                  <br>
+                     document.writeln(x);
+               </strong> 
+            </li>
+
+            <li>
+               <strong>
+                  switch (valorX % 2) {
+                     <br>
+                     case 0:
+                        <br>
+                        document.writeln("Entero par");
+                        <br>
+                        break;
+                        <br>
+                     case 1:
+                        <br>
+                        document.writeln("Entero impar");
+                        <br>
+                        break;
+                        <br>
+                     default:
+                        <br>
+                        document.writeln("Entero impar");  // para valores negativos (-1)
+                        <br>
+                  }
+               </strong>
+            </li>
+
+            <li>
+               <strong>
+                  for (var x = 19; x >= 1; x -= 2)
+                     <br>
+                     document.writeln(x);
+               </strong>
+            </li>
+
+            <li>
+               <strong>
+                  var contador = 2;
+                  <br>
+                  do {
+                     <br>
+                     document.writeln(contador);
+                     <br>
+                     contador += 2;
+                     <br>
+                  } while (contador <= 100);
+               </strong>
+            </li>
+         </ol>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 12
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            7.20 Un palíndromo es un número o una frase de texto que se lee igual al derecho y al revés. 
+            Por ejemplo, cada uno de los siguientes enteros de cinco dígitos es un palíndromo: 12321, 55555, 45554 y 11611. 
+            Escriba una secuencia de comandos que lea un entero de cinco dígitos y determine si es un palíndromo. 
+            Si el número no es de cinco dígitos, muestre un diálogo alert que indique el problema al usuario y le permita introducir un nuevo valor después de cerrar d diálogo alert. 
+            [Sugerencia: Es posible hacer este ejercicio con las técnicas que aprendió en este capitulo.
+            Tendrá que usar operaciones de división y de residuo para “seleccionar" cada dígito].
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            7.20 
+            <script>
+                let n, valido = false;
+
+                while (!valido) {
+                    n = parseInt(prompt("Introduzca un entero de cinco dígitos:"));
+                    valido = !isNaN(n) && Math.abs(n) >= 10000 && Math.abs(n) <= 99999;
+                    if (!valido)
+                        alert("El número debe tener exactamente cinco dígitos.");
+                }
+
+                n = Math.abs(n);
+                const d1 = Math.floor(n / 10000);      // primer dígito
+                const d2 = Math.floor(n / 1000) % 10;  // segundo dígito
+                const d4 = Math.floor(n / 10) % 10;    // cuarto dígito
+                const d5 = n % 10;                     // último dígito
+
+                if (d1 === d5 && d2 === d4)
+                    document.writeln(`<p>${n} es un palíndromo.</p>`);
+                else
+                    document.writeln(`<p>${n} no es un palíndromo.</p>`);
+            </script>
+        </p>
+        
+        <a href= "/Capitulo7/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

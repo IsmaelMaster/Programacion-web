@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.13
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.13 Escriba una función llamada potenciaEntera(base, exponente) que devuelva el valor de base elevada a exponente. Por ejemplo, potenciaEntera(3, 4) = 3 * 3 * 3 * 3. Suponga que exponente y base son enteros. La función potenciaEntera debería usar una instrucción for o while para controlar el cálculo. Incorpore esta función en una secuencia de comandos que lea valores enteros de un formulario de HTML5 para base y exponente, y que realice el cálculo con la función potenciaEntera. El formulario de HTML5 deberá consistir de dos campos de texto y un botón para iniciar el cálculo.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.13
+         </h3>
+         <form>
+            <label>Base: <input type="text" id="base"></label>
+            <label>Exponente: <input type="text" id="exponente"></label>
+            <input type="button" id="botonCalcular" value="Calcular">
+         </form>
+         <p id="resultado"></p>
+
+         <script>
+            function potenciaEntera(base, exponente) {
+               let resultado = 1;
+               const veces = Math.abs(exponente);
+
+               for (let i = 1; i <= veces; i++)
+                  resultado *= base;
+
+               return exponente < 0 ? 1 / resultado : resultado;
+            }
+
+            function calcularPotencia() {
+               const base = parseInt(document.getElementById("base").value);
+               const exponente = parseInt(document.getElementById("exponente").value);
+
+               if (isNaN(base) || isNaN(exponente)) {
+                  document.getElementById("resultado").textContent = "Introduzca valores enteros en ambos campos.";
+                  return;
+               }
+
+               document.getElementById("resultado").textContent =
+                  base + " elevado a " + exponente + " = " + potenciaEntera(base, exponente);
+            }
+
+            document.getElementById("botonCalcular").addEventListener("click", calcularPotencia);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

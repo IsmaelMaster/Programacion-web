@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 14
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            7.22 Una compañía desea transmitir datos por télefono, pero le preocupa que sus teléfonos puedan estar intervenidos.
+            Todos sus datos se transmiten como enteros de cuatro dígitos. 
+            La compañía le ha pedido a usted que escríba una secuencia de comandos que cifre sus datos, de modo que puedan transmitirse en forma mas segura. 
+            Su secuencia de comandos debe leer un entero de cuatro dígitos introducido por el usuario en un diálogo pronpt y cifrarlo de la siguiente manera: reemplace cada dígito con (la suma de ese dígito más 7) módulo 10. 
+            Después intercambie el primer dígito con el tercero, e intercambie el segundo dígito con el cuarto. 
+            Luego produzca texto de HTML5 que muestre el entero cifrado.
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            7.22 
+            <script>
+                const entrada = prompt("Introduzca un entero de cuatro dígitos:");
+
+                if (!/^\d{4}$/.test(entrada)) {
+                    document.writeln("<p>Entrada no válida.</p>");
+                } else {
+                    const d = [...entrada].map(Number);
+                    const c = d.map(x => (x + 7) % 10);       // sumar 7 y tomar módulo 10
+                    const cifrado = [c[2], c[3], c[0], c[1]]; // intercambiar 1º con 3º y 2º con 4º
+                    document.writeln(`<p>Entero cifrado: ${cifrado.join("")}</p>`);
+                }
+            </script>
+        </p>
+        
+        <a href= "/Capitulo7/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

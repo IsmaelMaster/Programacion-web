@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 6
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.9 Una aplicación interesante de las computadoras es dibujar gráficos convencionales y de barra (también llamados histogramas). 
+         Escriba una secuencia de comandos que lea cinco números entre 1 y 30. 
+         Por cada número imprima texto en HTML5 que muestre una línea que contenga el mismo número de asteriscos adyacentes. 
+         Por ejemplo, si su programa lee el número 7, debe producir texto en HTMLS que muestre *******.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.9
+         <p>
+            <script>
+               for (let i = 1; i <= 5; i++) {
+                  let n = parseInt(prompt(`Número ${i} (entre 1 y 30):`));
+
+                  while (isNaN(n) || n < 1 || n > 30) {
+                     alert("El número debe estar entre 1 y 30.");
+                     n = parseInt(prompt(`Número ${i} (entre 1 y 30):`));
+                  }
+
+                  let barra = "";
+                  for (let j = 1; j <= n; j++)
+                     barra += "*";
+
+                  document.writeln(`<p>${barra}</p>`);
+               }
+            </script> 
+         </p>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

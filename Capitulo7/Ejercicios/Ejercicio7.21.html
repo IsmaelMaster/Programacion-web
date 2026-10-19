@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <!-- Este es el nombre de mi pantalla -->
+        <title>
+            Ejercicio 13
+        </title>
+    </head>
+
+    <body>
+        <!-- Este es el texto de la página -->
+        <h1>
+            Ejercicios
+        </h1>
+
+        <p>
+            7.21 Escríba una secuencia de comandos que produzca texto de HTML5 que siga mostrando en la ventana de comandos los múltiplos del entero 2 (a saber, 2, 4, 8, 16, 32, 64, etcétera). 
+            Su ciclo no debe terminar (es decir, debe crear un ciclo infinito). 
+            ¿Qué ocurre cuando ejecuta este programa?
+        </p>
+
+        <h1>
+            Ejercicios ya resueltos
+        </h1>
+
+        <p>
+            7.21 
+            <script>
+                let potencia = 2;
+
+                const idIntervalo = setInterval(() => {
+                    document.body.insertAdjacentHTML("beforeend", `<p>${potencia}</p>`);
+                    potencia *= 2;
+
+                    if (potencia > 1e15) {   // condición de paro
+                        clearInterval(idIntervalo);
+                        document.body.insertAdjacentHTML("beforeend", "<p><strong>Ciclo detenido.</strong></p>");
+                    }
+                }, 500);
+            </script>
+        </p>
+        
+        <a href= "/Capitulo7/Ejercicios/Ejercicios.html">
+            <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+        </a>
+    </body>
+</html>

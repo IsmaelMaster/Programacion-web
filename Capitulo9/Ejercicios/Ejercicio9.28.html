@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.28
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.28 Modifique el programa de Craps de la figura 9.7 para permitir las apuestas. Inicialice la variable saldoBanco en 1000 dólares. Pida al jugador que introduzca una apuesta. Revise si la apuesta es menor o igual que saldoBanco y, si no es así, haga que el usuario vuelva a introducir la apuesta hasta que se introduzca una válida. Después de introducir una apuesta válida, ejecute un juego de Craps. Si el jugador gana, aumente saldoBanco con base en la apuesta, e imprima el nuevo saldoBanco. Revise si saldoBanco es cero y, de ser así, imprima el mensaje "¡Lo siento. Está en bancarrota!". A medida que el juego progrese, imprima varios mensajes para crear conversación, como "¿Así que se va a quedar en bancarrota?", "¡Vamos, arriésguese!" o "¡Está teniendo éxito!", "¡Ahora es momento de cambiar sus fichas!". Implemente la conversación como una función separada que seleccione al azar la cadena a mostrar.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.28
+         </h3>
+         <div id="salida"></div>
+
+         <script>
+            let saldoBanco = 1000;
+
+            function mostrar(texto) {
+               document.getElementById("salida").insertAdjacentHTML("beforeend", `<p>${texto}</p>`);
+            }
+
+            function tirarDado() {
+               return 1 + Math.floor(Math.random() * 6);
+            }
+
+            // Devuelve true si el jugador gana y false si pierde
+            function jugarCraps() {
+               let suma = tirarDado() + tirarDado();
+               mostrar(`El jugador lanzó ${suma}`);
+
+               if (suma === 7 || suma === 11)
+                  return true;
+
+               if (suma === 2 || suma === 3 || suma === 12)
+                  return false;
+
+               const punto = suma;
+               mostrar(`El punto es ${punto}`);
+
+               while (true) {
+                  suma = tirarDado() + tirarDado();
+                  mostrar(`El jugador lanzó ${suma}`);
+
+                  if (suma === punto)
+                     return true;
+                  if (suma === 7)
+                     return false;
+               }
+            }
+
+            // Frases de conversación elegidas al azar
+            function conversacion() {
+               const frases = [
+                  "¿Así que se va a quedar en bancarrota?",
+                  "¡Vamos, arriésguese!",
+                  "¡Está teniendo éxito!",
+                  "¡Ahora es momento de cambiar sus fichas!"
+               ];
+               return frases[Math.floor(Math.random() * frases.length)];
+            }
+
+            // Pide una apuesta válida; devuelve null si el usuario cancela
+            function pedirApuesta() {
+               let texto = prompt(`Saldo: $${saldoBanco}. Introduzca su apuesta:`);
+
+               while (true) {
+                  if (texto === null)
+                     return null;
+
+                  const apuesta = parseInt(texto);
+                  if (!isNaN(apuesta) && apuesta > 0 && apuesta <= saldoBanco)
+                     return apuesta;
+
+                  texto = prompt(`Apuesta no válida. Introduzca una apuesta entre 1 y ${saldoBanco}:`);
+               }
+            }
+
+            mostrar(`Saldo inicial: $${saldoBanco}`);
+
+            while (saldoBanco > 0) {
+               const apuesta = pedirApuesta();
+               if (apuesta === null)
+                  break;
+
+               if (jugarCraps()) {
+                  saldoBanco += apuesta;
+                  mostrar("¡Gana la apuesta!");
+               } else {
+                  saldoBanco -= apuesta;
+                  mostrar("Pierde la apuesta.");
+               }
+
+               mostrar(`Nuevo saldo: $${saldoBanco}`);
+
+               if (saldoBanco === 0) {
+                  mostrar("¡Lo siento. Está en bancarrota!");
+                  break;
+               }
+
+               mostrar(conversacion());
+
+               if (!confirm("¿Desea jugar otra vez?"))
+                  break;
+            }
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

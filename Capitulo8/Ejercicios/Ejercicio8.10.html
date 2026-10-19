@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 7
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.10 (
+         <strong>
+            Cancion "Los doce dias de Navidad"
+         </strong>
+         ) Escriba una secuencia de comandos que utilice estructuras de repetición y un switch para imprimir la canción "Los Doce Días de Navidad". 
+         Encontrará bs pabbras en el sitio http://en.wikipedía.org/wiki/The_Twelve_Days_of_Christmas.(song)
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.10
+         <p>
+            <script>
+               const ordinales = ["first", "second", "third", "fourth", "fifth", "sixth",
+                   "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"];
+
+               function regalo(dia) {
+                  switch (dia) {
+                     case 1:  return "a Partridge in a Pear Tree";
+                     case 2:  return "Two Turtle Doves";
+                     case 3:  return "Three French Hens";
+                     case 4:  return "Four Calling Birds";
+                     case 5:  return "Five Golden Rings";
+                     case 6:  return "Six Geese a-laying";
+                     case 7:  return "Seven Swans a-swimming";
+                     case 8:  return "Eight Maids a-milking";
+                     case 9:  return "Nine Ladies Dancing";
+                     case 10: return "Ten Lords a-leaping";
+                     case 11: return "Eleven Pipers Piping";
+                     case 12: return "Twelve Drummers Drumming";
+                     default: return "";
+                  }
+               }
+
+               for (let verso = 1; verso <= 12; verso++) {
+                  document.writeln(`<p>On the ${ordinales[verso - 1]} day of Christmas, my true love gave to me:<br>`);
+
+                  for (let g = verso; g >= 1; g--) {
+                     let texto = regalo(g);
+                     if (g === 1 && verso > 1)
+                        texto = "And " + texto;
+                     document.writeln(`${texto}<br>`);
+                  }
+
+                  document.writeln("</p>");
+               }
+            </script> 
+         </p>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

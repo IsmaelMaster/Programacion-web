@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.8
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.8 Un estacionamiento cobra una cuota mínima de $2 por estacionarse hasta tres horas. El estacionamiento cobra $0.50 adicionales por cada hora o fracción que exceda las tres horas. El cargo máximo por un periodo de 24 horas es de $10.00. Suponga que no hay autos que se estacionen por más de 24 horas a la vez. Escriba una secuencia de comandos que calcule y muestre los cargos de estacionamiento por cada cliente que haya estacionado su auto en este lote ayer. Debe usar un elemento form para recibir del usuario las horas que se estacionó cada cliente. El programa debe mostrar el cargo para el cliente actual; además debe calcular y mostrar el total corriente de los recibos de ayer. El programa debe usar la función calcularCargos para determinar el cargo para cada cliente. Para obtener el número del elemento form, use las técnicas que se muestran en el ejercicio de autoevaluación 9.6.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.8
+         </h3>
+         <form>
+            <label>Horas estacionado: <input type="number" id="horas" min="0" max="24" step="any"></label>
+            <input type="button" id="botonCargo" value="Registrar cliente">
+         </form>
+         <p id="resultado"></p>
+         <p id="total"></p>
+
+         <script>
+            let totalRecibos = 0;
+            let numeroCliente = 0;
+
+            function calcularCargos(horas) {
+               if (horas <= 3)
+                  return 2.00;
+
+               const horasExtra = Math.ceil(horas - 3); // cada hora o fracción después de 3
+               const cargo = 2.00 + 0.50 * horasExtra;
+               return Math.min(cargo, 10.00);           // cargo máximo de 24 horas
+            }
+
+            function registrarCliente() {
+               const campo = document.getElementById("horas");
+               const horas = parseFloat(campo.value);
+
+               if (isNaN(horas) || horas < 0 || horas > 24) {
+                  alert("Introduzca un número de horas entre 0 y 24.");
+                  return;
+               }
+
+               numeroCliente++;
+               const cargo = calcularCargos(horas);
+               totalRecibos += cargo;
+
+               document.getElementById("resultado").textContent =
+                  "Cliente " + numeroCliente + ": cargo = $" + cargo.toFixed(2);
+               document.getElementById("total").textContent =
+                  "Total de recibos de ayer: $" + totalRecibos.toFixed(2);
+
+               campo.value = "";
+               campo.focus();
+            }
+
+            document.getElementById("botonCargo").addEventListener("click", registrarCliente);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

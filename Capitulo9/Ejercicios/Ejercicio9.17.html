@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.17
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.17 Implemente las siguientes funciones: a) La función celsius devuelve el equivalente en Celsius de una temperatura en Fahrenheit, mediante el cálculo C = 5.0 / 9.0 * (F − 32). b) La función fahrenheit devuelve el equivalente en Fahrenheit de una temperatura en Celsius, mediante el cálculo F = 9.0 / 5.0 * C + 32. c) Use estas funciones para escribir una secuencia de comandos que permita al usuario introducir una temperatura en Fahrenheit o Celsius y muestre el equivalente en Celsius o Fahrenheit. Su documento de HTML5 debe contener dos botones: uno para iniciar la conversión de Fahrenheit a Celsius y otro para iniciar la conversión de Celsius a Fahrenheit.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.17
+         </h3>
+         <form>
+            <label>Temperatura: <input type="number" id="temperatura" step="any"></label>
+            <input type="button" id="botonFC" value="Fahrenheit a Celsius">
+            <input type="button" id="botonCF" value="Celsius a Fahrenheit">
+         </form>
+         <p id="resultado"></p>
+
+         <script>
+            function celsius(fahrenheit) {
+               return 5.0 / 9.0 * (fahrenheit - 32);
+            }
+
+            function fahrenheit(celsius) {
+               return 9.0 / 5.0 * celsius + 32;
+            }
+
+            function leerTemperatura() {
+               return parseFloat(document.getElementById("temperatura").value);
+            }
+
+            function mostrar(texto) {
+               document.getElementById("resultado").textContent = texto;
+            }
+
+            document.getElementById("botonFC").addEventListener("click", () => {
+               const f = leerTemperatura();
+               if (isNaN(f)) return mostrar("Introduzca una temperatura válida.");
+               mostrar(f + " °F = " + celsius(f).toFixed(2) + " °C");
+            });
+
+            document.getElementById("botonCF").addEventListener("click", () => {
+               const c = leerTemperatura();
+               if (isNaN(c)) return mostrar("Introduzca una temperatura válida.");
+               mostrar(c + " °C = " + fahrenheit(c).toFixed(2) + " °F");
+            });
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

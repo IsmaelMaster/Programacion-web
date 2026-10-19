@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 3
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         8.6 Escriba una secuencia de comandos que encuentre el menor de varios enteros no negativos. 
+         Suponga que el primer valor leído especifica el número de valores que el usuario introducira.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <p>
+         8.6
+         <p>
+            <script>
+               const cantidad = parseInt(prompt("¿Cuántos valores va a introducir?"));
+               let menor = null;
+
+               for (let i = 1; i <= cantidad; i++) {
+                  const valor = parseInt(prompt(`Valor ${i} (no negativo):`));
+                  if (menor === null || valor < menor)
+                     menor = valor;
+               }
+
+               document.writeln(`<p>El menor valor es: ${menor}</p>`);
+            </script> 
+         </p>
+      </p>
+        
+      <a href= "/Capitulo8/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

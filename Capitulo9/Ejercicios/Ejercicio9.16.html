@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.16
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.16 Escriba segmentos de programa que realicen cada una de las siguientes tareas: a) Calcule la parte entera del cociente cuando el entero a se divide entre el entero b. b) Calcule el residuo entero cuando el entero a se divide entre el entero b. c) Use las piezas de programa que se desarrollaron en las partes (a) y (b) para escribir una función llamada mostrarDigitos que reciba un entero entre 1 y 99999 y lo imprima como una serie de dígitos, separados por dos espacios cada uno. Por ejemplo, el entero 4562 debería imprimirse como 4  5  6  2. d) Incorpore la función desarrollada en la parte (c) en una secuencia de comandos que reciba un entero de un diálogo prompt e invoque mostrarDigitos para pasar a la función el entero introducido.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.16
+         </h3>
+         <script>
+            // a) Parte entera del cociente
+            function parteEntera(a, b) {
+               return Math.floor(a / b);
+            }
+
+            // b) Residuo de la división
+            function residuo(a, b) {
+               return a % b;
+            }
+
+            // c) Imprime los dígitos del entero separados por dos espacios
+            function mostrarDigitos(entero) {
+               if (entero < 1 || entero > 99999) {
+                  document.writeln("<p>El entero debe estar entre 1 y 99999.</p>");
+                  return;
+               }
+
+               let texto = "";
+               let yaComenzo = false;
+
+               for (let divisor = 10000; divisor >= 1; divisor = parteEntera(divisor, 10)) {
+                  const digito = residuo(parteEntera(entero, divisor), 10);
+
+                  // Se omiten los ceros a la izquierda, pero siempre se imprime el último dígito
+                  if (digito !== 0 || yaComenzo || divisor === 1) {
+                     texto += digito + "&nbsp;&nbsp;";
+                     yaComenzo = true;
+                  }
+               }
+
+               document.writeln(`<p>${texto}</p>`);
+            }
+
+            // d) Uso con un diálogo prompt
+            const entero = parseInt(prompt("Introduzca un entero entre 1 y 99999:"));
+            mostrarDigitos(entero);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

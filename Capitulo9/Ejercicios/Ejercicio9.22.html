@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.22
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.22 Las computadoras desempeñan un papel cada vez mayor en la educación. Escriba un programa que ayude a un estudiante de primaria a aprender a multiplicar. Use Math.random para producir dos enteros positivos de un dígito. Después deberá mostrar una pregunta tal como ¿Cuánto es 6 por 7? A continuación, el estudiante escribirá la respuesta en un campo de texto. Su programa deberá verificar la respuesta del estudiante. Si es correcta, muestre la cadena "Muy bien" y genere una nueva pregunta. Si la respuesta es equivocada, muestre la cadena "No. Intente de nuevo." y deje que el estudiante intente la misma pregunta otra vez en forma repetida, hasta que por fin la saque bien. Deberá usarse una función separada para generar cada pregunta nueva. Esta función deberá llamarse una vez cuando la secuencia de comandos empiece su ejecución y cada vez que el usuario responda de manera correcta a la pregunta.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.22
+         </h3>
+         <p id="pregunta"></p>
+         <form>
+            <input type="text" id="respuesta">
+            <input type="button" id="botonResponder" value="Responder">
+         </form>
+         <p id="mensaje"></p>
+
+         <script>
+            let numero1, numero2;
+
+            function nuevaPregunta() {
+               numero1 = 1 + Math.floor(Math.random() * 9);
+               numero2 = 1 + Math.floor(Math.random() * 9);
+               document.getElementById("pregunta").textContent = `¿Cuánto es ${numero1} por ${numero2}?`;
+            }
+
+            function verificarRespuesta() {
+               const campo = document.getElementById("respuesta");
+               const respuesta = parseInt(campo.value);
+               const mensaje = document.getElementById("mensaje");
+
+               if (respuesta === numero1 * numero2) {
+                  mensaje.textContent = "Muy bien";
+                  nuevaPregunta();
+               } else {
+                  mensaje.textContent = "No. Intente de nuevo.";
+               }
+
+               campo.value = "";
+               campo.focus();
+            }
+
+            document.getElementById("botonResponder").addEventListener("click", verificarRespuesta);
+            nuevaPregunta();
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>

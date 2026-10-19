@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <!-- Este es el nombre de mi pantalla -->
+      <title>
+         Ejercicio 9.7
+      </title>
+   </head>
+
+   <body>
+      <!-- Este es el texto de la página -->
+      <h1>
+         Ejercicios
+      </h1>
+
+      <p>
+         9.7 Escriba una secuencia de comandos que use un formulario (form) para obtener el radio de un círculo del usuario y después llame a la función areaCirculo para calcular el área del círculo y mostrar el resultado en un párrafo de la página. Para obtener el número del elemento form, use las técnicas que se muestran en el ejercicio de autoevaluación 9.6.
+      </p>
+
+      <h1>
+         Ejercicios ya resueltos
+      </h1>
+
+      <div>
+         <h3>
+            9.7
+         </h3>
+         <form>
+            <label>Radio del círculo: <input type="number" id="campoEntrada" step="any"></label>
+            <input type="button" id="botonCalcular" value="Calcular área">
+         </form>
+         <p id="resultado"></p>
+
+         <script>
+            function areaCirculo(radio) {
+               return Math.PI * radio * radio;
+            }
+
+            function mostrarArea() {
+               const campo = document.getElementById("campoEntrada");
+               const radio = parseFloat(campo.value);
+               const resultado = document.getElementById("resultado");
+
+               if (isNaN(radio) || radio < 0) {
+                  resultado.textContent = "Introduzca un radio válido.";
+                  return;
+               }
+
+               resultado.textContent = "El área del círculo es: " + areaCirculo(radio).toFixed(4);
+            }
+
+            document.getElementById("botonCalcular").addEventListener("click", mostrarArea);
+         </script>
+      </div>
+
+      <a href= "/Capitulo9/Ejercicios/Ejercicios.html">
+         <img src = "/Imagenes/regreso.png" width = "90" height = "120" alt = "Regreso">
+      </a>
+   </body>
+</html>
